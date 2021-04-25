@@ -30,8 +30,6 @@ public class OknoGlowne extends javax.swing.JFrame {
     private void initComponents() {
 
         wyborAlgorytmu = new javax.swing.ButtonGroup();
-<<<<<<< HEAD
-=======
         sygnalWe = new javax.swing.JTextField();
         sygnalNad = new javax.swing.JTextField();
         generate_signal = new javax.swing.JButton();
@@ -41,7 +39,6 @@ public class OknoGlowne extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         sygnalWy = new javax.swing.JTextField();
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
         opcjaCRC = new javax.swing.JRadioButton();
         opcjaCRCr = new javax.swing.JRadioButton();
         opcjaSDLC = new javax.swing.JRadioButton();
@@ -61,18 +58,6 @@ public class OknoGlowne extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         generate_noise = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-<<<<<<< HEAD
-        informacje = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        SygnalZakl = new javax.swing.JTextArea();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        SygnalNad = new javax.swing.JTextArea();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        sygnalWy = new javax.swing.JTextArea();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-=======
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         compute = new javax.swing.JButton();
@@ -103,7 +88,6 @@ public class OknoGlowne extends javax.swing.JFrame {
 
         sygnalWy.setEditable(false);
 
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
         wyborAlgorytmu.add(opcjaCRC);
         opcjaCRC.setText("CRC 16");
 
@@ -153,16 +137,7 @@ public class OknoGlowne extends javax.swing.JFrame {
 
         jLabel5.setText("Sygnał zakłócający [XOR]");
 
-<<<<<<< HEAD
-        jButton2.setText("Generuj zakłócenie");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-=======
         generate_noise.setText("Generuj zakłócenie");
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
 
         jTextField1.setText("0,01");
 
@@ -214,32 +189,6 @@ public class OknoGlowne extends javax.swing.JFrame {
                         .addComponent(opcjaPar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
-                            .addComponent(jScrollPane2)
-                            .addComponent(jScrollPane5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(informacje))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(sygnalWyPop, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,7 +223,6 @@ public class OknoGlowne extends javax.swing.JFrame {
                                 .addComponent(compute)
                                 .addGap(65, 65, 65)))))
                 .addContainerGap(60, Short.MAX_VALUE))
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,37 +246,16 @@ public class OknoGlowne extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-<<<<<<< HEAD
-                        .addComponent(jScrollPane2))
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-=======
                         .addComponent(sygnalZakl)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-<<<<<<< HEAD
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))
-=======
                             .addComponent(generate_signal)
                             .addComponent(generate_noise))
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4))
-<<<<<<< HEAD
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(informacje, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sygnalWyPop, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,33 +266,12 @@ public class OknoGlowne extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(35, Short.MAX_VALUE))
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     
-<<<<<<< HEAD
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int dlugosc=24;
-        Random rng=new Random();
-        int liczba=rng.nextInt(1<<dlugosc);
-        String prawy = Integer.toBinaryString(liczba);
-        //problem jest taki
-        //że nie mamy zer z lewej strony
-        //np. 0010 1100 -> 10 1100
-        int ileZer=Integer.numberOfLeadingZeros(liczba)-32+dlugosc;
-        //generujemy lewy ciąg
-        String lewy="";
-        for(int i=0;i<ileZer;i++)
-        {
-            lewy+="0";
-        }
-        //nanieść stringa do pola tekstowego
-        sygnalWe.setText(lewy+prawy);
-    }//GEN-LAST:event_jButton1ActionPerformed
-=======
     private void generate_signalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate_signalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_generate_signalActionPerformed
@@ -379,7 +285,6 @@ public class OknoGlowne extends javax.swing.JFrame {
             jLabel7.setText(Integer.toString(crc_16.value)); // dodane do sprawdzenie - na razie nie dziala
         }
     }//GEN-LAST:event_computeActionPerformed
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -421,17 +326,9 @@ public class OknoGlowne extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JTextArea SygnalNad;
-    private javax.swing.JTextArea SygnalZakl;
-    private javax.swing.JLabel informacje;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-=======
     private javax.swing.JButton compute;
     private javax.swing.JButton generate_noise;
     private javax.swing.JButton generate_signal;
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -45,40 +45,6 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jScrollPane4" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jLabel3" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField1" pref="86" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane3" alignment="0" min="-2" pref="207" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="informacje" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-=======
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="sygnalWyPop" min="-2" pref="188" max="-2" attributes="0"/>
@@ -127,7 +93,6 @@
                   </Group>
               </Group>
               <EmptySpace pref="60" max="32767" attributes="0"/>
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
           </Group>
       </Group>
     </DimensionLayout>
@@ -160,21 +125,11 @@
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                   <Component id="jScrollPane3" min="-2" pref="128" max="-2" attributes="0"/>
               </Group>
-<<<<<<< HEAD
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-=======
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-<<<<<<< HEAD
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-=======
                           <Component id="generate_signal" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="generate_noise" alignment="3" min="-2" max="-2" attributes="0"/>
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -187,16 +142,12 @@
                           <Component id="jScrollPane5" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-<<<<<<< HEAD
-                  <Component id="informacje" min="-2" pref="182" max="-2" attributes="0"/>
-=======
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="compute" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel7" min="-2" pref="130" max="-2" attributes="0"/>
                   </Group>
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -204,8 +155,6 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-<<<<<<< HEAD
-=======
     <Component class="javax.swing.JTextField" name="sygnalWe">
       <Properties>
         <Property name="text" type="java.lang.String" value="101011101000101100011"/>
@@ -257,7 +206,6 @@
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
     <Component class="javax.swing.JRadioButton" name="opcjaCRC">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
@@ -399,58 +347,6 @@
         <Property name="text" type="java.lang.String" value="INFORMACJE O B&#x141;&#x118;DACH"/>
       </Properties>
     </Component>
-<<<<<<< HEAD
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="SygnalZakl">
-          <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="lineWrap" type="boolean" value="true"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="SygnalNad">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="lineWrap" type="boolean" value="true"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane5">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="sygnalWy">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="lineWrap" type="boolean" value="true"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-=======
     <Component class="javax.swing.JButton" name="compute">
       <Properties>
         <Property name="text" type="java.lang.String" value="Oblicz"/>
@@ -459,6 +355,5 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="computeActionPerformed"/>
       </Events>
     </Component>
->>>>>>> parent of e8d56bd (Revert "ej dlaczego "you dont have write acces to CRCproject"?")
   </SubComponents>
 </Form>
