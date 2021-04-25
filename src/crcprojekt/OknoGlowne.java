@@ -39,7 +39,7 @@ public class OknoGlowne extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         sygnalWe = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        generujSygnal = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         sygnalWyPop = new javax.swing.JTextArea();
@@ -47,8 +47,8 @@ public class OknoGlowne extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        generujZakl = new javax.swing.JButton();
+        wspZakl = new javax.swing.JTextField();
         informacje = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         SygnalZakl = new javax.swing.JTextArea();
@@ -56,10 +56,12 @@ public class OknoGlowne extends javax.swing.JFrame {
         SygnalNad = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
         sygnalWy = new javax.swing.JTextArea();
+        guzikOblicz = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         wyborAlgorytmu.add(opcjaCRC);
+        opcjaCRC.setSelected(true);
         opcjaCRC.setText("CRC 16");
 
         wyborAlgorytmu.add(opcjaCRCr);
@@ -85,10 +87,10 @@ public class OknoGlowne extends javax.swing.JFrame {
         sygnalWe.setText("000001011100101011100101");
         jScrollPane1.setViewportView(sygnalWe);
 
-        jButton1.setText("Generuj losowy sygnał");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        generujSygnal.setText("Generuj losowy sygnał");
+        generujSygnal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                generujSygnalActionPerformed(evt);
             }
         });
 
@@ -108,14 +110,14 @@ public class OknoGlowne extends javax.swing.JFrame {
 
         jLabel5.setText("Sygnał zakłócający [XOR]");
 
-        jButton2.setText("Generuj zakłócenie");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        generujZakl.setText("Generuj zakłócenie");
+        generujZakl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                generujZaklActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("0,01");
+        wspZakl.setText("0,01");
 
         informacje.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         informacje.setText("INFORMACJE O BŁĘDACH");
@@ -136,6 +138,13 @@ public class OknoGlowne extends javax.swing.JFrame {
         sygnalWy.setLineWrap(true);
         sygnalWy.setRows(5);
         jScrollPane5.setViewportView(sygnalWy);
+
+        guzikOblicz.setText("Oblicz");
+        guzikOblicz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guzikObliczActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,22 +173,23 @@ public class OknoGlowne extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1))
+                            .addComponent(generujSygnal))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel5)
-                            .addComponent(jButton2)
+                            .addComponent(generujZakl)
                             .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
+                                .addComponent(wspZakl, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
                             .addComponent(jScrollPane2)
                             .addComponent(jScrollPane5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
+                            .addComponent(guzikOblicz)
                             .addComponent(informacje))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -199,7 +209,7 @@ public class OknoGlowne extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(wspZakl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -209,20 +219,23 @@ public class OknoGlowne extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))
+                            .addComponent(generujZakl)
+                            .addComponent(generujSygnal))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(informacje, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(informacje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(guzikOblicz))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -230,7 +243,7 @@ public class OknoGlowne extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void generujSygnalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generujSygnalActionPerformed
         int dlugosc=24;
         Random rng=new Random();
         int liczba=rng.nextInt(1<<dlugosc);
@@ -247,11 +260,22 @@ public class OknoGlowne extends javax.swing.JFrame {
         }
         //nanieść stringa do pola tekstowego
         sygnalWe.setText(lewy+prawy);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_generujSygnalActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void generujZaklActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generujZaklActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_generujZaklActionPerformed
+
+    private void guzikObliczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guzikObliczActionPerformed
+        CRC16 crc_16 = new CRC16();
+        int signal=Integer.parseInt(sygnalWe.getText(),2);
+        String test = wyborAlgorytmu.getSelection().getActionCommand();
+        if(wyborAlgorytmu.getSelection()==opcjaCRC)
+        {
+            crc_16.update((byte)signal);
+            informacje.setText(Integer.toString(crc_16.value)); // dodane do sprawdzenie - na razie nie dziala
+        }
+    }//GEN-LAST:event_guzikObliczActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,9 +315,10 @@ public class OknoGlowne extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea SygnalNad;
     private javax.swing.JTextArea SygnalZakl;
+    private javax.swing.JButton generujSygnal;
+    private javax.swing.JButton generujZakl;
+    private javax.swing.JButton guzikOblicz;
     private javax.swing.JLabel informacje;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -305,7 +330,6 @@ public class OknoGlowne extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JRadioButton opcjaCRC;
     private javax.swing.JRadioButton opcjaCRCr;
     private javax.swing.JRadioButton opcjaHamming;
@@ -315,6 +339,40 @@ public class OknoGlowne extends javax.swing.JFrame {
     private javax.swing.JTextArea sygnalWe;
     private javax.swing.JTextArea sygnalWy;
     private javax.swing.JTextArea sygnalWyPop;
+    private javax.swing.JTextField wspZakl;
     private javax.swing.ButtonGroup wyborAlgorytmu;
     // End of variables declaration//GEN-END:variables
+}
+
+class CRC16
+{
+    public int value;
+    public CRC16()
+    {
+        value = 0;
+    }
+    public void update(byte signal)
+    {
+        int a, b;
+        a =(int)signal;
+        for(int i=7; i>=0; i--)
+        {
+            a = a << 1;
+            b = (a >>> 8) & 1;
+            if((value & 0x8000)!=0)
+            {
+                value = ((value << 1) + b)^0x1021;
+            }
+            else
+            {
+                value = (value << 1) + b;
+            }
+        }
+        value = value &0xffff;
+        return;
+    }
+    public void reset()
+    {
+        value = 0;
+    }
 }
