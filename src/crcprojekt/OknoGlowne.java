@@ -30,7 +30,7 @@ public class OknoGlowne extends javax.swing.JFrame {
         wyborAlgorytmu = new javax.swing.ButtonGroup();
         sygnalWe = new javax.swing.JTextField();
         sygnalNad = new javax.swing.JTextField();
-        generate_signal = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         sygnalWyPop = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -45,11 +45,10 @@ public class OknoGlowne extends javax.swing.JFrame {
         opcjaPar = new javax.swing.JRadioButton();
         sygnalZakl = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        generate_noise = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        compute = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,10 +57,10 @@ public class OknoGlowne extends javax.swing.JFrame {
         sygnalNad.setEditable(false);
         sygnalNad.setPreferredSize(new java.awt.Dimension(6, 20));
 
-        generate_signal.setText("Generuj losowy sygnał");
-        generate_signal.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Generuj losowy sygnał");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generate_signalActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -97,7 +96,7 @@ public class OknoGlowne extends javax.swing.JFrame {
 
         jLabel5.setText("Sygnał zakłócający [XOR]");
 
-        generate_noise.setText("Generuj zakłócenie");
+        jButton2.setText("Generuj zakłócenie");
 
         jTextField1.setText("0,01");
 
@@ -105,13 +104,6 @@ public class OknoGlowne extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("INFORMACJE O BŁĘDACH");
-
-        compute.setText("Oblicz");
-        compute.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                computeActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,40 +127,35 @@ public class OknoGlowne extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(sygnalWyPop, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(sygnalWy))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(sygnalWe, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel3))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField1))
-                                            .addComponent(jLabel5)
-                                            .addComponent(generate_noise)
-                                            .addComponent(sygnalZakl, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(generate_signal))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(sygnalWyPop, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(sygnalWy))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(sygnalWe, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel3))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel6)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(jTextField1))
+                                                .addComponent(jLabel5)
+                                                .addComponent(jButton2)
+                                                .addComponent(sygnalZakl, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(sygnalNad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel2)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(compute)
-                                .addGap(65, 65, 65)))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,12 +183,12 @@ public class OknoGlowne extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sygnalZakl)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(generate_signal)
-                            .addComponent(generate_noise))
+                            .addComponent(jButton1)
+                            .addComponent(jButton2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -211,9 +198,7 @@ public class OknoGlowne extends javax.swing.JFrame {
                             .addComponent(sygnalWyPop, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sygnalWy, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(compute)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(58, 58, 58)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -222,19 +207,9 @@ public class OknoGlowne extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void generate_signalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generate_signalActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_generate_signalActionPerformed
-
-    private void computeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_computeActionPerformed
-        CRC16 crc_16 = new CRC16();
-        int signal=Integer.parseInt(sygnalWe.getText());
-        if(wyborAlgorytmu.getSelection()==opcjaCRC)
-        {
-            crc_16.update((byte)signal);
-            jLabel7.setText(Integer.toString(crc_16.value)); // dodane do sprawdzenie - na razie nie dziala
-        }
-    }//GEN-LAST:event_computeActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,9 +247,8 @@ public class OknoGlowne extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton compute;
-    private javax.swing.JButton generate_noise;
-    private javax.swing.JButton generate_signal;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -296,37 +270,4 @@ public class OknoGlowne extends javax.swing.JFrame {
     private javax.swing.JTextField sygnalZakl;
     private javax.swing.ButtonGroup wyborAlgorytmu;
     // End of variables declaration//GEN-END:variables
-}
-
-class CRC16
-{
-    public int value;
-    public CRC16()
-    {
-        value = 0;
-    }
-    public void update(byte signal)
-    {
-        int a, b;
-        a =(int)signal;
-        for(int i=7; i>=0; i--)
-        {
-            a = a << 1;
-            b = (a >>> 8) & 1;
-            if((value & 0x8000)!=0)
-            {
-                value = ((value << 1) + b)^0x1021;
-            }
-            else
-            {
-                value = (value << 1) + b;
-            }
-        }
-        value = value &0xffff;
-        return;
-    }
-    public void reset()
-    {
-        value = 0;
-    }
 }
