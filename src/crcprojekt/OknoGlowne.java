@@ -63,21 +63,27 @@ public class OknoGlowne extends javax.swing.JFrame {
         wyborAlgorytmu.add(opcjaCRC);
         opcjaCRC.setSelected(true);
         opcjaCRC.setText("CRC 16");
+		opcjaCRC.setActionCommand("CRC");
 
         wyborAlgorytmu.add(opcjaCRCr);
         opcjaCRCr.setText("CRC 16 REVERSE");
-
+		opcjaCRCr.setActionCommand("CRC-R");
+		
         wyborAlgorytmu.add(opcjaSDLC);
         opcjaSDLC.setText("SDLC");
+		opcjaSDLC.setActionCommand("SDLC");
 
         wyborAlgorytmu.add(opcjaSDLCr);
         opcjaSDLCr.setText("SDLC REVERSE");
+		opcjaSDLCr.setActionCommand("SDLC-R");
 
         wyborAlgorytmu.add(opcjaHamming);
         opcjaHamming.setText("kodowanie Hamminga");
+		opcjaHamming.setActionCommand("Hamming");
 
         wyborAlgorytmu.add(opcjaPar);
         opcjaPar.setText("kontrola parzystości");
+		opcjaPar.setActionCommand("Par");
 
         jLabel1.setText("Sygnał wejściowy [0/1]");
 
@@ -269,12 +275,33 @@ public class OknoGlowne extends javax.swing.JFrame {
     private void guzikObliczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guzikObliczActionPerformed
         CRC16 crc_16 = new CRC16();
         int signal=Integer.parseInt(sygnalWe.getText(),2);
-        String test = wyborAlgorytmu.getSelection().getActionCommand();
-        if(wyborAlgorytmu.getSelection()==opcjaCRC)
+        if(wyborAlgorytmu.getSelection().getActionCommand()=="CRC")
         {
+            crc_16.reset();
             crc_16.update((byte)signal);
             informacje.setText(Integer.toString(crc_16.value)); // dodane do sprawdzenie - na razie nie dziala
         }
+		else if(wyborAlgorytmu.getSelection().getActionCommand()=="CRC-R")
+		{
+			informacje.setText("Lorem Ipsum, tu bedzie wynik CRC reverse");
+		}
+		else if(wyborAlgorytmu.getSelection().getActionCommand()=="SDLC")
+		{
+			informacje.setText("Lorem Ipsum, tu bedzie wynik SDLC");
+		}
+		else if(wyborAlgorytmu.getSelection().getActionCommand()=="SDLC-R")
+		{
+			informacje.setText("Lorem Ipsum, tu bedzie wynik SDLC reverse");
+		}
+		else if(wyborAlgorytmu.getSelection().getActionCommand()=="Par")
+		{
+			informacje.setText("Parole Parole");
+		}
+		else
+		{
+			informacje.setText("42");
+		}
+		
     }//GEN-LAST:event_guzikObliczActionPerformed
 
     /**
