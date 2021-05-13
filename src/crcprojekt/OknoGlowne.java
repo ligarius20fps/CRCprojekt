@@ -273,17 +273,18 @@ public class OknoGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_generujZaklActionPerformed
 
     private void guzikObliczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guzikObliczActionPerformed
-        CRC16 crc_16 = new CRC16();
+        ControlSum crc= new ControlSum();
         int signal=Integer.parseInt(sygnalWe.getText(),2);
         if(wyborAlgorytmu.getSelection().getActionCommand()=="CRC")
         {
-            crc_16.reset();
-            crc_16.update((byte)signal);
-            informacje.setText(Integer.toString(crc_16.value)); // dodane do sprawdzenie - na razie nie dziala
+            crc.CRC_16(signal);
+            informacje.setText(Integer.toString(crc.value)); // dodane do sprawdzenie - na razie nie dziala
         }
 		else if(wyborAlgorytmu.getSelection().getActionCommand()=="CRC-R")
 		{
-			informacje.setText("Lorem Ipsum, tu bedzie wynik CRC reverse");
+                    crc.reset();
+                    crc.CRC_16_rev((byte)signal);
+                    informacje.setText(Integer.toString(crc.value));
 		}
 		else if(wyborAlgorytmu.getSelection().getActionCommand()=="SDLC")
 		{
@@ -371,32 +372,85 @@ public class OknoGlowne extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 }
 
-class CRC16
+class ControlSum
 {
     public int value;
-    public CRC16()
+    public ControlSum()
     {
         value = 0;
     }
-    public void update(byte signal)
+    
+    public int CRC_16(byte[] bytes)
     {
-        int a, b;
-        a =(int)signal;
-        for(int i=7; i>=0; i--)
-        {
-            a = a << 1;
-            b = (a >>> 8) & 1;
-            if((value & 0x8000)!=0)
-            {
-                value = ((value << 1) + b)^0x1021;
+        int i;
+        int crc_value = 0;
+        for (int len = 0; len < bytes.length; len++) {
+        for (i = 0x80; i != 0; i >>= 1) {
+            if ((crc_value & 0x8000) != 0) {
+                crc_value = (crc_value << 1) ^ 0x8005;
+            } else {
+                crc_value = crc_value << 1;
             }
-            else
-            {
-                value = (value << 1) + b;
+            if ((bytes[len] & i) != 0) {
+                crc_value ^= 0x8005;
             }
         }
-        value = value &0xffff;
-        return;
+    }
+    return crc_value;
+    }
+    public int CRC_16_rev(byte[] bytes)
+    {
+        int i;
+        int crc_value = 0;
+        for (int len = 0; len < bytes.length; len++) {
+        for (i = 0x80; i != 0; i >>= 1) {
+            if ((crc_value & 0x8000) != 0) {
+                crc_value = (crc_value << 1) ^ 0x4005;
+            } else {
+                crc_value = crc_value << 1;
+            }
+            if ((bytes[len] & i) != 0) {
+                crc_value ^= 0x4005;
+            }
+        }
+    }
+    return crc_value;
+    }
+    public int SDLC(byte[] bytes)
+    {
+        int i;
+        int crc_value = 0;
+        for (int len = 0; len < bytes.length; len++) {
+        for (i = 0x80; i != 0; i >>= 1) {
+            if ((crc_value & 0x8000) != 0) {
+                crc_value = (crc_value << 1) ^ 0x1021;
+            } else {
+                crc_value = crc_value << 1;
+            }
+            if ((bytes[len] & i) != 0) {
+                crc_value ^= 0x1021;
+            }
+        }
+    }
+    return crc_value;
+    }
+   public int SDLC_rev(byte[] bytes)
+    {
+        int i;
+        int crc_value = 0;
+        for (int len = 0; len < bytes.length; len++) {
+        for (i = 0x80; i != 0; i >>= 1) {
+            if ((crc_value & 0x8000) != 0) {
+                crc_value = (crc_value << 1) ^ 0x811;
+            } else {
+                crc_value = crc_value << 1;
+            }
+            if ((bytes[len] & i) != 0) {
+                crc_value ^= 0x811;
+            }
+        }
+    }
+    return crc_value;
     }
     public void reset()
     {
