@@ -274,25 +274,38 @@ public class OknoGlowne extends javax.swing.JFrame {
 
     private void guzikObliczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guzikObliczActionPerformed
         ControlSum crc= new ControlSum();
-        int signal=Integer.parseInt(sygnalWe.getText(),2);
+        String signal=sygnalWe.getText();
+        int liczba_bajtow=(int) Math.ceil((double)signal.length()/8);
+        Byte[] bajty=new Byte[liczba_bajtow];
+        for(int i=0;i<bajty.length;i++)
+        {
+            //bit po prawej stronie jest najmłodszy
+            int beginIndex=signal.length()-8*(i+1);
+            if(beginIndex<0)beginIndex=0;
+            String temp=signal.substring(beginIndex,signal.length()-8*i);
+            int bajt=Integer.parseInt(temp, 2);
+            if(bajt>127)bajt-=256;
+            bajty[i]=(byte)bajt;
+        }
+        crc.reset();
         if(wyborAlgorytmu.getSelection().getActionCommand()=="CRC")
         {
-            crc.CRC_16(signal);
-            informacje.setText(Integer.toString(crc.value)); // dodane do sprawdzenie - na razie nie dziala
+            crc.CRC_16(bajty); //do zrobienia - zweryfikować poprawność działania metody
+            informacje.setText(Integer.toString(crc.value));
         }
 		else if(wyborAlgorytmu.getSelection().getActionCommand()=="CRC-R")
 		{
-                    crc.reset();
-                    crc.CRC_16_rev((byte)signal);
-                    informacje.setText(Integer.toString(crc.value));
+                    crc.CRC_16_rev(bajty);
 		}
 		else if(wyborAlgorytmu.getSelection().getActionCommand()=="SDLC")
 		{
-			informacje.setText("Lorem Ipsum, tu bedzie wynik SDLC");
+			crc.SDLC(bajty);
+                        informacje.setText(Integer.toString(crc.value));
 		}
 		else if(wyborAlgorytmu.getSelection().getActionCommand()=="SDLC-R")
 		{
-			informacje.setText("Lorem Ipsum, tu bedzie wynik SDLC reverse");
+			crc.SDLC_rev(bajty);
+                        informacje.setText(Integer.toString(crc.value));
 		}
 		else if(wyborAlgorytmu.getSelection().getActionCommand()=="Par")
 		{
@@ -302,7 +315,6 @@ public class OknoGlowne extends javax.swing.JFrame {
 		{
 			informacje.setText("42");
 		}
-		
     }//GEN-LAST:event_guzikObliczActionPerformed
 
     /**
@@ -380,7 +392,7 @@ class ControlSum
         value = 0;
     }
     
-    public int CRC_16(byte[] bytes)
+    public void CRC_16(Byte[] bytes)
     {
         int i;
         int crc_value = 0;
@@ -396,9 +408,9 @@ class ControlSum
             }
         }
     }
-    return crc_value;
+    this.value=crc_value;
     }
-    public int CRC_16_rev(byte[] bytes)
+    public void CRC_16_rev(Byte[] bytes)
     {
         int i;
         int crc_value = 0;
@@ -414,9 +426,9 @@ class ControlSum
             }
         }
     }
-    return crc_value;
+    this.value=crc_value;
     }
-    public int SDLC(byte[] bytes)
+    public void SDLC(Byte[] bytes)
     {
         int i;
         int crc_value = 0;
@@ -432,9 +444,9 @@ class ControlSum
             }
         }
     }
-    return crc_value;
+    this.value=crc_value;
     }
-   public int SDLC_rev(byte[] bytes)
+   public void SDLC_rev(Byte[] bytes)
     {
         int i;
         int crc_value = 0;
@@ -450,10 +462,10 @@ class ControlSum
             }
         }
     }
-    return crc_value;
+    this.value=crc_value;
     }
     public void reset()
     {
-        value = 0;
+        this.value = 0;
     }
 }
