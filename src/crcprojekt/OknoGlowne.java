@@ -6,6 +6,7 @@
 package crcprojekt;
 
 import java.util.Random;
+import java.util.Arrays;
 
 /**
  *
@@ -313,7 +314,16 @@ public class OknoGlowne extends javax.swing.JFrame {
 		}
 		else
 		{
-			informacje.setText("42");
+                    int r = 1;
+  
+                    while (Math.pow(2, r) < (signal.length() + r + 1)) 
+                    {
+                        r++;
+                    }
+                    
+                    int[] ar = Hamming.generateCode(signal, r);
+                    ar=Hamming.calculate(ar, r);
+                    informacje.setText("Kod Hamminga wynosi: " + Arrays.toString(ar).replaceAll("\\[|\\]|,|\\s", ""));
 		}
     }//GEN-LAST:event_guzikObliczActionPerformed
 
@@ -467,5 +477,46 @@ class ControlSum
     public void reset()
     {
         this.value = 0;
+    }
+}
+class Hamming
+{
+    static int[] generateCode(String signal, int r)
+    {
+        int numOfBytes=signal.length();
+        int[] ar = new int[r + numOfBytes + 1];
+        int j = 0;
+        for (int i = 1; i < ar.length; i++) 
+        {
+            if ((Math.ceil(Math.log(i) / Math.log(2))
+                 - Math.floor(Math.log(i) / Math.log(2)))
+                == 0) 
+            {
+
+                ar[i] = 0;
+            }
+            else 
+            {
+  
+                ar[i] = (int)(signal.charAt(j) - '0');
+                j++;
+            }
+        }
+        return ar;
+    }
+    static int[] calculate(int[] ar, int r)
+    {
+        for (int i = 0; i < r; i++) {
+            int x = (int)Math.pow(2, i);
+            for (int j = 1; j < ar.length; j++) {
+                if (((j >> i) & 1) == 1) {
+                    if (x != j)
+                        ar[x] = ar[x] ^ ar[j];
+                }
+            }
+            /*System.out.println("r" + x + " = "
+                               + ar[x]);*/
+        }
+        return ar;
     }
 }
