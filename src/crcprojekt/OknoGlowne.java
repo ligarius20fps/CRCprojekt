@@ -277,7 +277,22 @@ public class OknoGlowne extends javax.swing.JFrame {
         ControlSum crc= new ControlSum();
         //sygnal ^ zaklocenie
         String signal=sygnalWe.getText();
-        //mam traktować zmienne jako StringBit????
+         //mam traktować zmienne jako StringBit????
+         int count=0;
+         for(int i=0;i<signal.length();i++)
+         {
+            if(signal.charAt(i) == '1')
+            count++; //liczymy ile jedynek w ciagu
+         }
+         int parityBit;
+         if(count % 2 != 0)
+         {
+             parityBit = 1;
+         }
+         else
+         {
+             parityBit = 0;
+         }
         String zaklocenie=SygnalZakl.getText();
         if(zaklocenie.length()!=0)
         {
@@ -331,7 +346,15 @@ public class OknoGlowne extends javax.swing.JFrame {
                 informacje.setText(Integer.toString(crc.value));
                 break;
             case "Par":
-                informacje.setText("Parole Parole");
+                boolean err=Parity.checkParity(signal, parityBit);
+                if(err==false)
+                {
+                   informacje.setText("Nie wykryto błędu");
+                }
+                else
+                {
+                    informacje.setText("Wykryto błąd!");
+                }
                 break;
             default:
                 int r = 1;
@@ -536,5 +559,28 @@ class Hamming
                                + ar[x]);*/
         }
         return ar;
+    }
+}
+class Parity
+{
+    static boolean checkParity(String signal, int parityBit)
+    {
+        boolean err = false;
+        int count = 0;
+        
+        for(int i=0;i<signal.length();i++)
+         {
+            if(signal.charAt(i) == '1')
+            count++; //liczymy ile jedynek w ciagu
+         }
+        if(parityBit == 1)
+        {
+            count++;
+        }
+        if(count % 2 != 0)
+        {
+             err = true;
+        }
+        return err;
     }
 }
